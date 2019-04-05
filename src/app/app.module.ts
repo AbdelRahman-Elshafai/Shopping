@@ -10,6 +10,7 @@ import { InputComponent } from './components/shared/input/input.component';
 import { SubmitComponent } from './components/shared/submit/submit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     SignInFormComponent,
     SignUpFormComponent,
     InputComponent,
-    SubmitComponent
+    SubmitComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
