@@ -1,4 +1,4 @@
-<form [formGroup] = "signInForm">
+<form [formGroup] = "signInForm" (ngSubmit) = "onLogin()">
 
     <app-input [group] = 'signInForm' [control] = "'email'"  [for] = "'email'" [label] = "'Email Address'" [type] = "'email'" [id] = "'email'" [placeholder] = "'Enter Your Email Adress'"></app-input>
 

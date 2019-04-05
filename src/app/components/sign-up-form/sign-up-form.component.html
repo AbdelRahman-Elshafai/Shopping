@@ -1,4 +1,4 @@
-<form [formGroup] = "signUpForm">
+<form [formGroup] = "signUpForm" (ngSubmit) = "onRegister()">
 
   <app-input [group] = 'signUpForm'[control] = "'username'" [for] = "'username'" [label] = "'User Name'" [type] = "'text'" [id] = "'username'" 
   [placeholder] = "'Enter Your UserName'"></app-input>
@@ -9,8 +9,8 @@
   <app-input  [group] = 'signUpForm' [control] = "'password'" [for] = "'password'" [label] = "'Password'" [type] = "'password'" [id] = "'password'" 
   [placeholder] = "'Enter Your Password'"></app-input>
 
-  <app-input [group] = 'signUpForm' [control] = "'password_confirmation'" [for] = "'password_confirmation'" [label] = "'Password Confirmation'" [type] = "'password'" [id] = "'password_confirmation'"
-   [placeholder] = "'Please Confirm Your Password'"></app-input>
+  <!-- <app-input [group] = 'signUpForm' [control] = "'password_confirmation'" [for] = "'password_confirmation'" [label] = "'Password Confirmation'" [type] = "'password'" [id] = "'password_confirmation'"
+   [placeholder] = "'Please Confirm Your Password'"></app-input> -->
 
   <app-submit [value] = "'Register'"></app-submit>
 </form>
