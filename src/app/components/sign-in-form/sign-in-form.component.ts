@@ -18,8 +18,16 @@ export class SignInFormComponent implements OnInit {
   }
 
   onLogin(){
-    
-    console.log(JSON.parse(localStorage.getItem('User')));
+    if(this.signInForm.valid){
+      const user = JSON.parse(localStorage.getItem('User')); 
+      if(this.signInForm.value.email === user.email && this.signInForm.value.password === user.password){
+        console.log("good");
+        
+      }
+      else{
+        console.log("bad");        
+      }
+    }
     
   }
 
