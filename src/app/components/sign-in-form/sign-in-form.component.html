@@ -1,5 +1,9 @@
 <form>
 
-  <app-input></app-input>
+    <app-input [for] = "'email'" [label] = "'Email Address'" [type] = "'email'" [id] = "'email'" [placeholder] = "'Enter Your Email Adress'"></app-input>
+
+    <app-input [for] = "'password'" [label] = "'Password'" [type] = "'password'" [id] = "'password'" [placeholder] = "'Enter Your Password'"></app-input>
+
+    <app-submit [value] = "'Register'"></app-submit>
 
 </form>
