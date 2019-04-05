@@ -9,7 +9,8 @@ import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.comp
 import { InputComponent } from './components/shared/input/input.component';
 import { SubmitComponent } from './components/shared/submit/submit.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { HttpClient } from 'selenium-webdriver/http';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClient,
+    HttpClientModule,
   
   ],
   providers: [],
