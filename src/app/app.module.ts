@@ -8,6 +8,7 @@ import { SignInFormComponent } from './components/sign-in-form/sign-in-form.comp
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { InputComponent } from './components/shared/input/input.component';
 import { SubmitComponent } from './components/shared/submit/submit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SubmitComponent } from './components/shared/submit/submit.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
   
   ],
   providers: [],

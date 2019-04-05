@@ -12,6 +12,8 @@ export class InputComponent implements OnInit {
   @Input('type') typeInput;
   @Input('id') idInput;
   @Input('placeholder') placeholderInput;
+  @Input('control') formControlInput;
+  @Input('group') groupInput;
 
 
   constructor() { }
