@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SendDataService } from './services/SendData/send-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,7 @@ import { SendDataService } from './services/SendData/send-data.service';
 export class AppComponent implements OnInit {
   title = 'Shopping';
 
-  constructor(private sendData:SendDataService){}
+  constructor(){}
   ngOnInit(){
-    this.sendData.post_product();
   }
 }
