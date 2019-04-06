@@ -11,6 +11,7 @@ import { SubmitComponent } from './components/shared/submit/submit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { SingleProductComponent } from './components/home/single-product/single-product.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     SignUpFormComponent,
     InputComponent,
     SubmitComponent,
-    HomeComponent
+    HomeComponent,
+    SingleProductComponent
   ],
   imports: [
     BrowserModule,
