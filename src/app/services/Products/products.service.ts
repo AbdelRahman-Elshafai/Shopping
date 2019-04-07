@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from 'src/app/models/product';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
@@ -16,7 +15,7 @@ export class ProductsService{
   get_products(){
     return this.httpClient.get<Product[]>(this.url).pipe(
       map( (res : Product[]) => {
-        return this.products = res.map((product:any) => {          
+        return res.map((product:any) => {          
           return <Product>{
             id : product.Id,
             productId: product.ProductId,
@@ -28,11 +27,16 @@ export class ProductsService{
           }          
         })        
       })
-    );         
+    )       
   }
 
-  get_product(id : number){
-    console.log(this.products);
+  get_product(id : number){    
+    return this.get_products().pipe( 
+      map( (res) => {
+        
+        return res.find( product => product.id == id);
+      })
+    );    
     
   }
 }

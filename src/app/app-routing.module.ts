@@ -6,11 +6,12 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
 
 const routes: Routes = [
+  {path: '' , redirectTo : '/home' , pathMatch: "full"},
   {path : 'login' , component:SignInFormComponent},
   {path: 'register' , component:SignUpFormComponent},
   {path: 'home' , component:HomeComponent},
   {path : 'home/:id' , component:ProductDetailComponent},
-
+  
 
 ];
 
