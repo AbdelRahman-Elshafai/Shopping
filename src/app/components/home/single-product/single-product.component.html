@@ -1,3 +1,14 @@
-<p>
-  single-product works!
-</p>
+<div class="col-xl-12" style="cursor : pointer">
+ <figure class="card card-product">
+   <div class="img-wrap"><img [src]="product.productPicUrl"></div>
+   <figcaption class="info-wrap">
+       <h4 class="title">{{product.name}}</h4>
+   </figcaption>
+   <div class="bottom-wrap">
+     <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+     <div class="price-wrap h5">
+       <span class="price-new">{{product.price}}</span>
+     </div> 
+   </div> 
+ </figure>
+</div>   
