@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SingleProductComponent } from './components/home/single-product/single-product.component';
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
 import { ProductsService } from './services/Products/products.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ProductsService } from './services/Products/products.service';
     SubmitComponent,
     HomeComponent,
     SingleProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

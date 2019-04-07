@@ -10,13 +10,13 @@ import { ProductsService } from 'src/app/services/Products/products.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product : Product;
+  product : Product = null;
   constructor(private route : ActivatedRoute ,
               private productService:ProductsService) { }
 
   ngOnInit() {
     this.productService.get_product(this.route.snapshot.params['id']).subscribe( (res) => {
-      this.product = res;      
+      this.product = res;            
     });
     
   }

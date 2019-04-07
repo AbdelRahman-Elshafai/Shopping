@@ -30,10 +30,11 @@ export class ProductsService{
     )       
   }
 
+  //here i send the request again beacause if he enters the url directly into the url without clicking on the component
+  //i will have to send the request again otherwise it will be undefined
   get_product(id : number){    
     return this.get_products().pipe( 
-      map( (res) => {
-        
+      map( (res) => {        
         return res.find( product => product.id == id);
       })
     );    
