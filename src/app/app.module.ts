@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SingleProductComponent } from './components/home/single-product/single-product.component';
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
+import { ProductsService } from './services/Products/products.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { ProductDetailComponent } from './components/home/product-detail/product
     HttpClientModule,
   
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
