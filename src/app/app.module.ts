@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SingleProductComponent } from './components/home/single-product/single-product.component';
+import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SingleProductComponent } from './components/home/single-product/single-
     InputComponent,
     SubmitComponent,
     HomeComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
