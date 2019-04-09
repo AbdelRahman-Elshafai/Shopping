@@ -8,9 +8,13 @@ export class CartService {
 
   constructor() { }
 
-  @Output() orderProduct:EventEmitter<String> = new EventEmitter<String>();
+  @Output() orderProduct:EventEmitter<Object> = new EventEmitter<Object>();
 
-  addToCartCounter(productName:String){
-    this.orderProduct.emit(productName);
+  addToCartCounter(productName:String , productPrice:Number){    
+    
+    this.orderProduct.emit(
+      {"ProductName" : productName ,
+       "ProductPrice" : productPrice}
+      );
   }
 }

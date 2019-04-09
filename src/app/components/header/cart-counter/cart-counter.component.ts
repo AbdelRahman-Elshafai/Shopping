@@ -13,9 +13,9 @@ export class CartCounterComponent implements OnInit {
   constructor(private renderer:Renderer2 , private el :ElementRef , private cartService:CartService) { }
 
   ngOnInit() {
-    this.cartService.orderProduct.subscribe( (productName:String) => {
-      this.createAnchorTag(productName);
-      this.productNames.push(productName);
+    this.cartService.orderProduct.subscribe( (product:any) => {
+      this.createAnchorTag(product.ProductName);
+      this.productNames.push(product.ProductName);      
     });
   }
 
