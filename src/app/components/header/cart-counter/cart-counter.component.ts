@@ -9,11 +9,13 @@ import { CartService } from 'src/app/services/Cart/cart.service';
 export class CartCounterComponent implements OnInit {
   @ViewChild('dropDown') dropDown : ElementRef;
 
+  productNames :String[] = [];
   constructor(private renderer:Renderer2 , private el :ElementRef , private cartService:CartService) { }
 
   ngOnInit() {
     this.cartService.orderProduct.subscribe( (productName:String) => {
       this.createAnchorTag(productName);
+      this.productNames.push(productName);
     });
   }
 
@@ -41,12 +43,22 @@ export class CartCounterComponent implements OnInit {
     this.renderer.appendChild(span , text);
     this.renderer.appendChild(button , span);    
     this.renderer.listen(button , 'click' , (element) => {
-      this.removeItem(element);
+      this.removeItemFromDropDown(element);
     });
     return button;
   }
-  removeItem(element){
-    this.renderer.removeChild(this.dropDown.nativeElement , element.target.parentNode.parentNode);    
+  //remove the element from the dropdown menu
+  removeItemFromDropDown(element){
+    let parent = element.target.parentNode.parentNode;    
+    this.removeItemFromArray(parent);   
+    this.renderer.removeChild(this.dropDown.nativeElement , parent);     
   }
+  
+  //remove the element from the array
+  removeItemFromArray(parent){       
+    var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
+    this.productNames.splice(index , 1);    
+  }
+
 
 }
