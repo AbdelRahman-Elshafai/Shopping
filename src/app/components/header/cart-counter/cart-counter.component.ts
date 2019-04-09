@@ -16,6 +16,18 @@ export class CartCounterComponent implements OnInit {
   constructor(private renderer:Renderer2 , private el :ElementRef , private cartService:CartService) { }
 
   ngOnInit() {
+    if(localStorage.getItem('Products')){
+      
+      this.cartProducts = JSON.parse(localStorage.getItem('Products')).slice();
+      this.cartProducts.forEach(product => {        
+        this.createAnchorTag(product.ProductName , product.ProductCount);
+        this.addedProductsId.push(product.ProductId);
+      });
+    }
+    else{
+      localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
+      
+    }
     this.cartService.orderProduct.subscribe( (product:any) => {
       
       //check to see if the user already added the product
@@ -40,36 +52,19 @@ export class CartCounterComponent implements OnInit {
           "ProductCount" : this.productCount
         });        
         //crate the element that has the product 
-        this.createAnchorTag(product.ProductName);
+        this.createAnchorTag(product.ProductName , this.productCount);
 
       }
       //store the product or update in the localstorage    
       localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
 
-
-      // if(localStorage.getItem(product.ProductId)){
-      //   this.productCount = JSON.parse(localStorage.getItem(product.ProductId)).ProductCount + 1;
-      // }
-      // else{
-      //   this.productCount = 0;
-      //   console.log("noooo");
-        
-      // }
-      // localStorage.setItem("Products", JSON.stringify(
-      //   [
-      //     {
-      //       "ProductName" : product.ProductName,
-      //       "ProductPrice" : product.ProductPrice,
-      //       "ProductCount" : this.productCount,
-      //     }
-      //   ]));
-
-      // localStorage.setItem("Products" , JSON.stringify([]));
     });
   }
 
     //create the anchor tag the appends the element in the menu
-    createAnchorTag(productName){
+    createAnchorTag(productName:string , productCount:number){
+      console.log(productCount);
+      
       const anchor = this.renderer.createElement('a');
       this.renderer.addClass(anchor , 'dropdown-item');
       this.renderer.setAttribute(anchor , 'ngbDropdownItem' , '');
@@ -80,7 +75,7 @@ export class CartCounterComponent implements OnInit {
       this.renderer.appendChild(anchor , span);
       span = this.renderer.createElement('span');
       this.renderer.setAttribute(span , 'aria-hidden' , 'true');
-      text = this.renderer.createText(" (1)");
+      text = this.renderer.createText(" (" + productCount + ")");
       this.renderer.appendChild(span , text);
       this.renderer.appendChild(anchor , span);
       const button = this.createXButton();
