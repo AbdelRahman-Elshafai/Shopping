@@ -10,11 +10,17 @@ export class CartService {
 
   @Output() orderProduct:EventEmitter<Object> = new EventEmitter<Object>();
 
-  addToCartCounter(productName:String , productPrice:Number){    
+  addToCartCounter(productName:String , productPrice:Number , productId:Number){    
     
     this.orderProduct.emit(
-      {"ProductName" : productName ,
-       "ProductPrice" : productPrice}
-      );
+      {
+      "ProductName" : productName ,
+      "ProductPrice" : productPrice,
+      "ProductId": productId
+      });
+  }
+
+  storeProducts(){
+
   }
 }

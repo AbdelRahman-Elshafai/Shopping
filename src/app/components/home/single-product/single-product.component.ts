@@ -13,7 +13,7 @@ export class SingleProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  onOrder(productName:String , productPrice:Number){    
-    this.cartService.addToCartCounter(productName , productPrice);
+  onOrder(productName:String , productPrice:Number , productId:Number){        
+    this.cartService.addToCartCounter(productName , productPrice , productId);
   }
 }
