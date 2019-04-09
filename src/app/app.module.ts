@@ -17,6 +17,7 @@ import { ProductsService } from './services/Products/products.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationLinksComponent } from './components/header/navigation-links/navigation-links.component';
+import { CartCounterComponent } from './components/header/cart-counter/cart-counter.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NavigationLinksComponent } from './components/header/navigation-links/n
     ProductDetailComponent,
     FooterComponent,
     HeaderComponent,
-    NavigationLinksComponent
+    NavigationLinksComponent,
+    CartCounterComponent
   ],
   imports: [
     BrowserModule,
