@@ -12,19 +12,25 @@ export class CartCounterComponent implements OnInit {
   constructor(private renderer:Renderer2 , private el :ElementRef , private cartService:CartService) { }
 
   ngOnInit() {
-    const anchor = this.renderer.createElement('a');
-    const text = this.renderer.createText('hello world');
-    this.renderer.appendChild(anchor , text);
-    this.renderer.appendChild(this.dropDown.nativeElement , anchor);
-    // this.createAnchor();
-    this.createXButton();
     this.cartService.orderProduct.subscribe( (productName:String) => {
       console.log(productName);
-      
+      this.createAnchorTag(productName);
     });
   }
 
+    //create the anchor tag the appends the element in the menu
+    createAnchorTag(productName){
+      const anchor = this.renderer.createElement('a');
+      this.renderer.addClass(anchor , 'dropdown-item');
+      this.renderer.setAttribute(anchor , 'ngbDropdownItem' , '');
+      const text = this.renderer.createText(productName);
+      this.renderer.appendChild(anchor , text);
+      const button = this.createXButton();
+      this.renderer.appendChild(anchor , button);
+      this.renderer.appendChild(this.dropDown.nativeElement , anchor);
+    }
 
+  //create the x button for every product that gets added
   createXButton(){
     const button = this.renderer.createElement('button');
     this.renderer.setAttribute(button , 'type' , 'button');
@@ -38,9 +44,8 @@ export class CartCounterComponent implements OnInit {
     this.renderer.listen(button , 'click' , () => {
       this.removeItem();
     });
-    this.renderer.appendChild(this.dropDown.nativeElement , button);
+    return button;
   }
-
   removeItem(){
     console.log("hello");
     
