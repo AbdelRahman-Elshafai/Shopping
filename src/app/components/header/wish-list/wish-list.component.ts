@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishListComponent implements OnInit {
 
+  productList : [] = [];
   constructor() { }
 
   ngOnInit() {
+    if(localStorage.getItem('Products')){
+      this.productList = JSON.parse(localStorage.getItem('Products')).slice();
+    }
+  }
+
+  onRemove(index){
+    console.log(this.productList);
+    
+    console.log(index);
+        
   }
 
 }
