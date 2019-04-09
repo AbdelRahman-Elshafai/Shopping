@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { CartService } from 'src/app/services/Cart/cart.service';
 
 @Component({
   selector: 'app-cart-counter',
@@ -8,7 +9,7 @@ import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/co
 export class CartCounterComponent implements OnInit {
   @ViewChild('dropDown') dropDown : ElementRef;
 
-  constructor(private renderer:Renderer2 , private el :ElementRef) { }
+  constructor(private renderer:Renderer2 , private el :ElementRef , private cartService:CartService) { }
 
   ngOnInit() {
     const anchor = this.renderer.createElement('a');
@@ -17,6 +18,10 @@ export class CartCounterComponent implements OnInit {
     this.renderer.appendChild(this.dropDown.nativeElement , anchor);
     // this.createAnchor();
     this.createXButton();
+    this.cartService.orderProduct.subscribe( (productName:String) => {
+      console.log(productName);
+      
+    });
   }
 
 

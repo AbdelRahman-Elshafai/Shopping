@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartService } from 'src/app/services/Cart/cart.service';
 
 @Component({
   selector: 'app-single-product',
@@ -7,14 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SingleProductComponent implements OnInit {
   @Input('singleProduct') product;
-  constructor() { }
+  constructor(private cartService:CartService) { }
 
   ngOnInit() {
   }
 
   onOrder(productName:String){
-    console.log(productName);
-    
-    
+    this.cartService.addToCartCounter(productName);
   }
 }

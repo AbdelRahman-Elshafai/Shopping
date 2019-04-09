@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationLinksComponent } from './components/header/navigation-links/navigation-links.component';
 import { CartCounterComponent } from './components/header/cart-counter/cart-counter.component';
+import { CartService } from './services/Cart/cart.service';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { CartCounterComponent } from './components/header/cart-counter/cart-coun
     HttpClientModule,
   
   ],
-  providers: [ProductsService],
+  providers: [ProductsService , CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
