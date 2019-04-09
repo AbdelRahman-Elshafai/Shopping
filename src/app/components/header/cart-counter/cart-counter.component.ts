@@ -13,7 +13,6 @@ export class CartCounterComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.orderProduct.subscribe( (productName:String) => {
-      console.log(productName);
       this.createAnchorTag(productName);
     });
   }
@@ -41,14 +40,13 @@ export class CartCounterComponent implements OnInit {
     const text = this.renderer.createText('×');
     this.renderer.appendChild(span , text);
     this.renderer.appendChild(button , span);    
-    this.renderer.listen(button , 'click' , () => {
-      this.removeItem();
+    this.renderer.listen(button , 'click' , (element) => {
+      this.removeItem(element);
     });
     return button;
   }
-  removeItem(){
-    console.log("hello");
-    
+  removeItem(element){
+    this.renderer.removeChild(this.dropDown.nativeElement , element.target.parentNode.parentNode);    
   }
 
 }
