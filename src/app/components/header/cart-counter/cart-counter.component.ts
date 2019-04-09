@@ -23,7 +23,7 @@ export class CartCounterComponent implements OnInit {
       if(currentProductIndex !== -1){
 
         //update the counter in the component
-        this.updateCounter(product.ProductName , this.cartProducts[currentProductIndex].ProductCount);
+        this.incrementCounter(product.ProductName , this.cartProducts[currentProductIndex].ProductCount);
 
         //increase the count by one
         this.cartProducts[currentProductIndex].ProductCount++;      
@@ -107,12 +107,12 @@ export class CartCounterComponent implements OnInit {
   //remove the element from the dropdown menu
   removeItemFromDropDown(element){
     let parent = element.target.parentNode.parentNode;    
-    this.decreaseCount(parent);  
+    this.decrementCounter(parent);  
     
   }
   
   //remove the element from the array
-  decreaseCount(parent){   
+  decrementCounter(parent){   
     
     //get the index of the product
     var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
@@ -120,20 +120,22 @@ export class CartCounterComponent implements OnInit {
     this.cartProducts[index].ProductCount--;
     
     //if it is below 1 Remove it From the array
+    //and remove it from the added array
+    //and remove it from the component
     if(this.cartProducts[index].ProductCount < 1){
       this.addedProductsId.splice(index , 1);
       this.cartProducts.splice(index, 1);
       this.renderer.removeChild(this.dropDown.nativeElement , parent);     
     }
-    console.log(this.addedProductsId);
-    console.log(this.cartProducts);
-    
-    
-    
+    else{
+
+      //remove one from the counter in component
+      parent.children[1].innerHTML = " (" + this.cartProducts[index].ProductCount + ")";
+    }
 
   }
 
-  updateCounter(productName:String , productCount){
+  incrementCounter(productName:String , productCount){
 
     //loop over all of the children of the parent
     for (let child of this.dropDown.nativeElement.children) {
