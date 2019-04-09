@@ -15,6 +15,8 @@ import { SingleProductComponent } from './components/home/single-product/single-
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
 import { ProductsService } from './services/Products/products.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavigationLinksComponent } from './components/header/navigation-links/navigation-links.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     SingleProductComponent,
     ProductDetailComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    NavigationLinksComponent
   ],
   imports: [
     BrowserModule,
