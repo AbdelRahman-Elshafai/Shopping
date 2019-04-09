@@ -61,10 +61,9 @@ export class CartCounterComponent implements OnInit {
     });
   }
 
+
     //create the anchor tag the appends the element in the menu
-    createAnchorTag(productName:string , productCount:number){
-      console.log(productCount);
-      
+    createAnchorTag(productName:string , productCount:number){      
       const anchor = this.renderer.createElement('a');
       this.renderer.addClass(anchor , 'dropdown-item');
       this.renderer.setAttribute(anchor , 'ngbDropdownItem' , '');

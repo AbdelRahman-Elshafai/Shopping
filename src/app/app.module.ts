@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationLinksComponent } from './components/header/navigation-links/navigation-links.component';
 import { CartCounterComponent } from './components/header/cart-counter/cart-counter.component';
 import { CartService } from './services/Cart/cart.service';
+import { WishListComponent } from './components/header/wish-list/wish-list.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CartService } from './services/Cart/cart.service';
     FooterComponent,
     HeaderComponent,
     NavigationLinksComponent,
-    CartCounterComponent
+    CartCounterComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
