@@ -4,12 +4,14 @@ import { SignInFormComponent } from './components/sign-in-form/sign-in-form.comp
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
+import { WishListComponent } from './components/header/wish-list/wish-list.component';
 
 const routes: Routes = [
   {path: '' , redirectTo : '/home' , pathMatch: "full"},
   {path : 'login' , component:SignInFormComponent},
   {path: 'register' , component:SignUpFormComponent},
   {path: 'home' , component:HomeComponent},
+  {path : 'home/wishlist' , component:WishListComponent},
   {path : 'home/:id' , component:ProductDetailComponent},
   
 
