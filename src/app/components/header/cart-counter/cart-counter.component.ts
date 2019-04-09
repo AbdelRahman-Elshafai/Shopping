@@ -30,7 +30,15 @@ export class CartCounterComponent implements OnInit {
     const text = this.renderer.createText('×');
     this.renderer.appendChild(span , text);
     this.renderer.appendChild(button , span);    
+    this.renderer.listen(button , 'click' , () => {
+      this.removeItem();
+    });
     this.renderer.appendChild(this.dropDown.nativeElement , button);
+  }
+
+  removeItem(){
+    console.log("hello");
+    
   }
 
 }
