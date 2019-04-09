@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/Cart/cart.service';
 
 @Component({
   selector: 'app-wish-list',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishListComponent implements OnInit {
 
-  productList : [] = [];
-  constructor() { }
+  productList: any[] = [];
+  constructor(private cartService:CartService) { }
 
   ngOnInit() {
     if(localStorage.getItem('Products')){
@@ -17,10 +18,12 @@ export class WishListComponent implements OnInit {
   }
 
   onRemove(index){
-    console.log(this.productList);
-    
-    console.log(index);
-        
+    this.productList[index].ProductCount--;
+    if(this.productList[index].ProductCount < 1){
+      this.productList.splice(index , 1);
+    }
+    localStorage.setItem('Products' , JSON.stringify(this.productList));
+    this.cartService.onRemovingProduct(index);
   }
 
 }

@@ -59,6 +59,13 @@ export class CartCounterComponent implements OnInit {
       localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
 
     });
+
+    this.cartService.removeProduct.subscribe((productIndex:number) => {
+      // console.log(this.dropDown.nativeElement.children[productIndex]);
+      this.decrementCounter(this.dropDown.nativeElement.children[productIndex]);
+      localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
+            
+    });
   }
 
 
@@ -99,7 +106,7 @@ export class CartCounterComponent implements OnInit {
     return button;
   }
   //remove the element from the dropdown menu
-  removeItemFromDropDown(element){
+  removeItemFromDropDown(element){    
     let parent = element.target.parentNode.parentNode;    
     this.decrementCounter(parent);  
     localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
