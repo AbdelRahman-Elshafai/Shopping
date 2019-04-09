@@ -12,9 +12,8 @@ export class SingleProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  onOrder(productName , productPrice){
+  onOrder(productName:String){
     console.log(productName);
-    console.log(productPrice);
     
     
   }
