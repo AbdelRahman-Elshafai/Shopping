@@ -12,4 +12,10 @@ export class SingleProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  onOrder(productName , productPrice){
+    console.log(productName);
+    console.log(productPrice);
+    
+    
+  }
 }
