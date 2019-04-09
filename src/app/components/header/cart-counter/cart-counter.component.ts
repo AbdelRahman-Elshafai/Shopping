@@ -107,20 +107,29 @@ export class CartCounterComponent implements OnInit {
   //remove the element from the dropdown menu
   removeItemFromDropDown(element){
     let parent = element.target.parentNode.parentNode;    
-    this.removeItemFromArray(parent);   
-    this.renderer.removeChild(this.dropDown.nativeElement , parent);     
+    this.decreaseCount(parent);  
+    
+    // this.renderer.removeChild(this.dropDown.nativeElement , parent);     
   }
   
   //remove the element from the array
-  removeItemFromArray(parent){   
+  decreaseCount(parent){   
+    
+    //get the index of the product
+    var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
+    //decrease it by one
+    this.cartProducts[index].ProductCount--;
+
+    //if it is below 1 Remove it From the array
+    if(this.cartProducts[index].ProductCount < 1){
+      this.addedProductsId.splice(index , 1);
+      this.cartProducts.splice(index, 1);
+    }
+    console.log(this.addedProductsId);
     console.log(this.cartProducts);
     
     
-    var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
-    // this.cartProducts[index].ProductCount--;
-    console.log(index);
-
-    // console.log(this.cartProducts);
+    
 
   }
 
