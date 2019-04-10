@@ -1,4 +1,9 @@
-<div class="row">
-  <app-single-product *ngFor = "let product of productsList" [singleProduct] = "product"></app-single-product>
-</div>
+<div class="container">
 
+    <div class="row">
+        <div class="col-md-4 product-grid" *ngFor = "let product of productsList">
+        <app-single-product  [singleProduct] = "product"></app-single-product>
+      </div>
+
+  </div>
+</div>
