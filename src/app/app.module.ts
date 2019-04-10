@@ -19,7 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationLinksComponent } from './components/header/navigation-links/navigation-links.component';
 import { CartCounterComponent } from './components/header/cart-counter/cart-counter.component';
 import { CartService } from './services/Cart/cart.service';
-import { WishListComponent } from './components/header/wish-list/wish-list.component';
+import { CartListComponent } from './components/header/cart-list/cart-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WishCounterComponent } from './components/header/wish-counter/wish-counter.component';
 
@@ -38,7 +38,7 @@ import { WishCounterComponent } from './components/header/wish-counter/wish-coun
     HeaderComponent,
     NavigationLinksComponent,
     CartCounterComponent,
-    WishListComponent,
+    CartListComponent,
     NotFoundComponent,
     WishCounterComponent
   ],

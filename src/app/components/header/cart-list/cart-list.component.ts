@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/Cart/cart.service';
 
 @Component({
-  selector: 'app-wish-list',
-  templateUrl: './wish-list.component.html',
-  styleUrls: ['./wish-list.component.scss']
+  selector: 'app-cart-list',
+  templateUrl: './cart-list.component.html',
+  styleUrls: ['./cart-list.component.scss']
 })
-export class WishListComponent implements OnInit {
+export class CartListComponent implements OnInit {
 
   productList: any[] = [];
   constructor(private cartService:CartService) { }
