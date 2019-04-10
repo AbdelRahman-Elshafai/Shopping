@@ -1,9 +1,23 @@
-<!-- <form [formGroup] = "signInForm" (ngSubmit) = "onLogin()">
+<div class="main">
 
-    <app-input [group] = 'signInForm' [control] = "'email'"  [for] = "'email'" [label] = "'Email Address'" [type] = "'email'" [id] = "'email'" [placeholder] = "'Enter Your Email Adress'"></app-input>
+        <section class="signin">
+            <div class="container">
+                <div class="signin-content">
+                    <form [formGroup] = "signInForm" (ngSubmit) = "onLogin()" id="signin-form" class="signin-form">
+                        <h2 class="form-title">Login</h2>
+                        
 
-    <app-input [group] = 'signInForm' [control] = "'password'"  [for] = "'password'" [label] = "'Password'" [type] = "'password'" [id] = "'password'" [placeholder] = "'Enter Your Password'"></app-input>
-
-    <app-submit [value] = "'Login'"></app-submit>
-
-</form> -->
+                                <app-input [group] = 'signInForm' [control] = "'email'"  
+                                 [type] = "'email'" [id] = "'email'" [placeholder] = "'Enter Your Email Adress'"></app-input>
+                            
+                                <app-input [group] = 'signInForm' [control] = "'password'"  
+                                 [type] = "'password'" [id] = "'password'" [placeholder] = "'Enter Your Password'"></app-input>
+                            
+                                <app-submit [value] = "'Login'"></app-submit>
+                            
+                        </form>
+                </div>
+            </div>
+        </section>
+      
+      </div>
