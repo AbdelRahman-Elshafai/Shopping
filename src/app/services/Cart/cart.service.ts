@@ -10,6 +10,7 @@ export class CartService {
 
   @Output() orderProduct:EventEmitter<Object> = new EventEmitter<Object>();
   @Output() removeProduct:EventEmitter<Number> = new EventEmitter<Number>();
+  @Output() removeCartProduct:EventEmitter<Number> = new EventEmitter<Number>();
 
   addToCartCounter(productName:String , productPrice:Number , productId:Number){    
     
@@ -23,5 +24,10 @@ export class CartService {
 
   onRemovingProduct(productIndex:number){
     this.removeProduct.emit(productIndex);
+  }
+
+  onRemovingCartProduct(productIndex:number){
+    
+    this.removeCartProduct.emit(productIndex);
   }
 }

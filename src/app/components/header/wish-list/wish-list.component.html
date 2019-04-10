@@ -15,7 +15,7 @@
     <td>{{ product.ProductPrice * product.ProductCount | number }}</td>
     <td>{{ product.ProductCount | number }}</td>
     <td><button type="button" class="close" aria-label="Close">
-      <span aria-hidden="true" (click) = "onRemove(i)">&times;</span>
+      <span aria-hidden="true" (click) = "onRemovingTableProduct(i)">&times;</span>
     </button> </td>
   </tr>
   </tbody>

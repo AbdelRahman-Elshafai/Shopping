@@ -61,8 +61,7 @@ export class CartCounterComponent implements OnInit {
     });
 
     this.cartService.removeProduct.subscribe((productIndex:number) => {
-      // console.log(this.dropDown.nativeElement.children[productIndex]);
-      this.decrementCounter(this.dropDown.nativeElement.children[productIndex]);
+      this.decrementCounter(this.dropDown.nativeElement.children[productIndex] , productIndex);
       localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
             
     });
@@ -108,18 +107,24 @@ export class CartCounterComponent implements OnInit {
   //remove the element from the dropdown menu
   removeItemFromDropDown(element){    
     let parent = element.target.parentNode.parentNode;    
-    this.decrementCounter(parent);  
+
+    //get the index of the product
+    var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
+
+    //notify the table to remove the product as well    
+    this.cartService.onRemovingCartProduct(index);
+    
+    this.decrementCounter(parent , index);  
     localStorage.setItem('Products' , JSON.stringify(this.cartProducts));
+
   }
   
   //remove the element from the array
-  decrementCounter(parent){   
-    
-    //get the index of the product
-    var index = Array.prototype.indexOf.call(this.dropDown.nativeElement.children, parent);
+  decrementCounter(parent , index){   
+        
     //decrease it by one
     this.cartProducts[index].ProductCount--;
-    
+
     //if it is below 1 Remove it From the array
     //and remove it from the added array
     //and remove it from the component
