@@ -23,7 +23,10 @@ export class SignUpFormComponent implements OnInit {
 
   onRegister(){
     if(this.signUpForm.valid){
-      localStorage.setItem('User' , JSON.stringify({'email' : this.signUpForm.value.email , 'password' : this.signUpForm.value.password}) ); 
+      localStorage.setItem('User' , JSON.stringify({
+        'email' : this.signUpForm.value.email ,
+        'password' : this.signUpForm.value.password
+      })); 
       this.router.navigate(['/home']);
     }
   }
