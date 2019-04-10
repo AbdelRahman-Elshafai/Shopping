@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LogOutService } from 'src/app/services/Auth/log-out.service';
@@ -7,8 +7,6 @@ import { LogOutService } from 'src/app/services/Auth/log-out.service';
   selector: 'app-sign-in-form',
   templateUrl: './sign-in-form.component.html',
   styleUrls: ['./sign-in-form.component.scss'],
-  encapsulation:ViewEncapsulation.None
-
 })
 export class SignInFormComponent implements OnInit {
   signInForm : FormGroup;
