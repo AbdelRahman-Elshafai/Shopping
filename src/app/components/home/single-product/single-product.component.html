@@ -1,48 +1,11 @@
-<!-- <div class="col-xl-12" >
- <figure class="card card-product">
-   <div class="img-wrap"><img [src]="product.productPicUrl" [routerLink]= "['/home' , product.id]" style="cursor: pointer"></div>
-   <figcaption class="info-wrap">
-       <h4 class="title">{{product.name}}</h4>
-   </figcaption>
-   <div class="bottom-wrap">
-     <a (click) = "onOrder(product.name , product.price , product.id)" class="btn btn-sm btn-primary float-right">Order Now</a>	
-     <div class="price-wrap h5">
-       <span class="price-new">{{product.price}}</span>
-     </div> 
-   </div> 
- </figure>
-</div>    -->
-
-
-
-      <!-- Product  -->
-        <div class="image">
-          <a href="#">
-            <img [src]="product.productPicUrl" class="w-100" height="300px">
-            <div class="overlay">
-              <div class="detail">View Details</div>
-            </div>
-          </a>
-        </div>
-        <h5 class="text-center">{{product.name}}</h5>
-        <h5 class="text-center">Price: ${{product.price}}</h5>
-        <a href="#" class="btn buy">BUY</a>
-      <!-- ./Product -->
-
- 
-  
-
-<!-- 
-  <div class="col-md-4 product-grid">
-      <div class="image">
-        <a href="#">
-          <img [src]="product.productPicUrl" class="w-100">
-          <div class="overlay">
-            <div class="detail">View Details</div>
-          </div>
-        </a>
-      </div>
-      <h5 class="text-center">Apple Watch Series 3 Aluminium</h5>
-      <h5 class="text-center">Price: $550.00</h5>
-      <a href="#" class="btn buy">BUY</a>
-    </div> -->
+<div class="image">
+  <a [routerLink] = "['/home' , product.id]">
+    <img [src]="product.productPicUrl" class="w-100" height="300px">
+    <div class="overlay">
+      <div class="detail">View Details</div>
+    </div>
+  </a>
+</div>
+<h5 class="text-center">{{product.name}}</h5>
+<h5 class="text-center">Price: ${{product.price}}</h5>
+<a (click) = "onOrder(product.name , product.price , product.id)" class="btn buy">BUY </a> 
