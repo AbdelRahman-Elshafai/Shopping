@@ -5,6 +5,7 @@ import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.comp
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/home/product-detail/product-detail.component';
 import { WishListComponent } from './components/header/wish-list/wish-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '' , redirectTo : '/home' , pathMatch: "full"},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'home/register' , component:SignUpFormComponent},
   {path : 'home/wishlist' , component:WishListComponent},
   {path : 'home/:id' , component:ProductDetailComponent},
+  {path: '**' , component:NotFoundComponent},
   
 
 ];

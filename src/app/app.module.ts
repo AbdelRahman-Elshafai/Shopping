@@ -20,6 +20,7 @@ import { NavigationLinksComponent } from './components/header/navigation-links/n
 import { CartCounterComponent } from './components/header/cart-counter/cart-counter.component';
 import { CartService } from './services/Cart/cart.service';
 import { WishListComponent } from './components/header/wish-list/wish-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { WishListComponent } from './components/header/wish-list/wish-list.compo
     HeaderComponent,
     NavigationLinksComponent,
     CartCounterComponent,
-    WishListComponent
+    WishListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
