@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogOutService } from 'src/app/services/Auth/log-out.service';
 
 @Component({
   selector: 'app-navigation-links',
@@ -8,18 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationLinksComponent implements OnInit {
   loggedIn : boolean = false;
   email : string;
-  constructor() { }
+  constructor(private logOutService:LogOutService) { }
 
   ngOnInit() {
-    if(localStorage.getItem('User')){
-      
+    if(localStorage.getItem('User')){      
       this.loggedIn = true;
       this.email = JSON.parse(localStorage.getItem('User')).email;
-      console.log(this.email);
     }
     else{
       this.loggedIn = false;
     }
+
+    this.logOutService.loggedIn.subscribe( () => {
+      this.email = JSON.parse(localStorage.getItem('User')).email;
+      this.loggedIn = true;
+    });
+
+    this.logOutService.loggedOut.subscribe( () => {
+      this.loggedIn = false;
+    });
     
 
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LogOutService } from 'src/app/services/Auth/log-out.service';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignInFormComponent implements OnInit {
   signInForm : FormGroup;
-  constructor(private router:Router) { }
+  constructor(private router:Router , private logOutService:LogOutService) { }
 
   ngOnInit() {
     this.signInForm = new FormGroup({
@@ -27,6 +28,8 @@ export class SignInFormComponent implements OnInit {
         'password' : this.signInForm.value.password
       })); 
       this.router.navigate(['/home']);
+
+      this.logOutService.onLoggingIn();
     }
     
   }
