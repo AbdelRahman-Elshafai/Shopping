@@ -1,4 +1,15 @@
 <div class="form-group" [formGroup] = "groupInput">
   <input [formControlName] = "formControlInput" [type]="typeInput" class="form-input" [id]="idInput"
     [placeholder]="placeholderInput">
+    <div *ngIf = "groupInput.get(formControlInput).invalid && groupInput.get(formControlInput).touched">
+      <small  class="form-text text-muted" *ngIf = "groupInput.get(formControlInput).errors.required">
+          {{formControlInput}} is required
+      </small>
+      <small  class="form-text text-muted" *ngIf = "groupInput.get(formControlInput).errors.email">
+          {{formControlInput}} Format is not correct
+      </small>
+      <small  class="form-text text-muted" *ngIf = "groupInput.get(formControlInput).errors.minlength">
+          {{formControlInput}} Must be Minimum length of 6 characters
+      </small>
+    </div>
 </div>

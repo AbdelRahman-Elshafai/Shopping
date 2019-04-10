@@ -44,7 +44,6 @@ import { WishListComponent } from './components/header/wish-list/wish-list.compo
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
   
   ],
   providers: [ProductsService , CartService],
