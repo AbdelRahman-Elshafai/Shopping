@@ -8,9 +8,9 @@ import { WishListComponent } from './components/header/wish-list/wish-list.compo
 
 const routes: Routes = [
   {path: '' , redirectTo : '/home' , pathMatch: "full"},
-  {path : 'login' , component:SignInFormComponent},
-  {path: 'register' , component:SignUpFormComponent},
   {path: 'home' , component:HomeComponent},
+  {path : 'home/login' , component:SignInFormComponent},
+  {path: 'home/register' , component:SignUpFormComponent},
   {path : 'home/wishlist' , component:WishListComponent},
   {path : 'home/:id' , component:ProductDetailComponent},
   

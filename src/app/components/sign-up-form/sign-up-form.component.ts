@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up-form',
   templateUrl: './sign-up-form.component.html',
-  styleUrls: ['./sign-up-form.component.scss']
+  styleUrls: ['./sign-up-form.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class SignUpFormComponent implements OnInit {
   
@@ -16,7 +17,6 @@ export class SignUpFormComponent implements OnInit {
       'username' : new FormControl(null , Validators.required),
       'email' : new FormControl(null , [Validators.required , Validators.email]),
       'password' : new FormControl(null , [Validators.required , Validators.minLength(6)]),
-      // 'password_confirmation' : new FormControl(null , [Validators.required , Validators.minLength(6)]),
     });
   }
 

@@ -8,8 +8,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
 
-  @Input('for') forInput;
-  @Input('label') labelValueInput;
   @Input('type') typeInput;
   @Input('id') idInput;
   @Input('placeholder') placeholderInput;
