@@ -16,4 +16,8 @@ export class SingleProductComponent implements OnInit {
   onOrder(productName:String , productPrice:Number , productId:Number){        
     this.cartService.addToCartCounter(productName , productPrice , productId);
   }
+
+  onWish(productName:String  , productId:Number){
+    this.cartService.addToWishList(productName , productId);
+  }
 }

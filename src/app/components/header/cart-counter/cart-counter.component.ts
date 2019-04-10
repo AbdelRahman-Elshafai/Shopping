@@ -104,6 +104,7 @@ export class CartCounterComponent implements OnInit {
     });
     return button;
   }
+  
   //remove the element from the dropdown menu
   removeItemFromDropDown(element){    
     let parent = element.target.parentNode.parentNode;    

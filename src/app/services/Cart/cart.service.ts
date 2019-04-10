@@ -11,6 +11,7 @@ export class CartService {
   @Output() orderProduct:EventEmitter<Object> = new EventEmitter<Object>();
   @Output() removeProduct:EventEmitter<Number> = new EventEmitter<Number>();
   @Output() removeCartProduct:EventEmitter<Number> = new EventEmitter<Number>();
+  @Output() wishProduct:EventEmitter<Object> = new EventEmitter<Object>();
 
   addToCartCounter(productName:String , productPrice:Number , productId:Number){    
     
@@ -20,6 +21,13 @@ export class CartService {
       "ProductPrice" : productPrice,
       "ProductId": productId
       });
+  }
+
+  addToWishList(productName:String , productId:Number){
+    this.wishProduct.emit({
+      "ProductName" : productName,
+      "ProductId": productId,
+    });
   }
 
   onRemovingProduct(productIndex:number){

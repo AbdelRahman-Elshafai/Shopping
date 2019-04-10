@@ -8,4 +8,5 @@
 </div>
 <h5 class="text-center">{{product.name}}</h5>
 <h5 class="text-center">Price: ${{product.price}}</h5>
+<a (click) = "onWish(product.name , product.id)" class="btn buy">Add To WishList</a> 
 <a (click) = "onOrder(product.name , product.price , product.id)" class="btn buy">BUY </a> 
